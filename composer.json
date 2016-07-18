@@ -2,6 +2,5 @@
     "name": "anderson/telegrambotestudo",
     "type": "project",
     "require": {
-        "php": ">=5.5.0"
     }
 }
