@@ -16,13 +16,11 @@ echo $response;
 */
 
 $updates = $telegram->getWebhookUpdates();
-echo $updates;
 
-$chatId = $updateArray["result"][0]["message"]["chat"]["id"];
+  $updateArray = json_decode($updates, TRUE);
+  $chatId = $updateArray["result"][0]["message"]["chat"]["id"];
 
-$response = $telegram->sendMessage([
-  'chat_id' => $chatId, 
-  'text' => 'Hello World'
-]);
-
-$messageId = $response->getMessageId();
+  $response = $telegram->sendMessage([
+    'chat_id' => $chatId,
+    'text' => 'Hello World'
+  ]);
