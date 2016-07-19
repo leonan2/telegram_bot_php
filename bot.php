@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 use Telegram\Bot\Api;
 
-$telegram = new Api('BOT TOKEN');
+$telegram = new Api('263074817:AAGLTJYhzahHybKzyUzFVFEuk8LpxkZkjqc');
 
 $response = $telegram->getMe();
 
