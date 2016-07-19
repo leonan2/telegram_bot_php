@@ -1,18 +1,29 @@
 <?php
+require 'vendor/autoload.php';
 
-$botToken = "263074817:AAGLTJYhzahHybKzyUzFVFEuk8LpxkZkjqc";
-$website = "https://api.telegram.org/bot".$botToken;
+use Telegram\Bot\Api;
 
-//$update = file_get_contents($website."/getupdates");
+$telegram = new Api('263074817:AAGLTJYhzahHybKzyUzFVFEuk8LpxkZkjqc');
 
-//webhook
-$update = file_get_contents("php://input");
+/*
+$response = $telegram->getMe();
 
-$updateArray = json_decode($update, TRUE);
+$botId = $response->getId();
+$firstName = $response->getFirstName();
+$username = $response->getUsername();
 
-$chatId = $updateArray["result"][0]["message"]["chat"]["id"];
+echo $response;
+*/
 
-file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=test");
+//$updates = $telegram->getWebhookUpdates();
+$response = $telegram->getUpdates();
 
-print_r($updateArray);
+  $updateArray = json_decode($response, TRUE);
+  $chatId = $updateArray["result"][0]["message"]["chat"]["id"];
 
+  $response = $telegram->sendMessage([
+    'chat_id' => $chatId,
+    'text' => 'Hello World'
+  ]);
+
+echo
