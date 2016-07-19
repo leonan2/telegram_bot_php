@@ -15,9 +15,10 @@ $username = $response->getUsername();
 echo $response;
 */
 
-$updates = $telegram->getWebhookUpdates();
+//$updates = $telegram->getWebhookUpdates();
+$response = $telegram->getUpdates();
 
-  $updateArray = json_decode($updates, TRUE);
+  $updateArray = json_decode($response, TRUE);
   $chatId = $updateArray["result"][0]["message"]["chat"]["id"];
 
   $response = $telegram->sendMessage([
