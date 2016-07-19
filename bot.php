@@ -23,11 +23,12 @@ echo $response;
 
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
+$hello = "hello";
 
 
 if ($update) {
   $response = $telegram->sendMessage([
     'chat_id' => '149525498',
-    'text' => $update["message"]
+    'text' => $hello
   ]);
 }
