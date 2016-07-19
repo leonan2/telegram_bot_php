@@ -157,3 +157,5 @@ if (!$update) {
 if (isset($update["message"])) {
   processMessage($update["message"]);
 }
+
+?>
