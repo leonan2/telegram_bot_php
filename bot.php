@@ -25,7 +25,7 @@ $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
 $texto = $update['message']['text'];
-$chatId['message']['chat']['id'];
+$chatId = $update['message']['chat']['id'];
 
 
 if ($update) {
