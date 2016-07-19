@@ -23,12 +23,25 @@ echo $response;
 
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
-$hello = "hello";
+
+$texto = $update['message']['text'];
+$chatId['message']['chat']['id'];
 
 
 if ($update) {
-  $response = $telegram->sendMessage([
-    'chat_id' => $update['message']['chat']['id'],
-    'text' => $update['message']['text']
-  ]);
+  switch ($update['message']['text']) {
+    case 'oi':
+      $response = $telegram->sendMessage([
+        'chat_id' => $chatId,
+        'text' => 'Oi, tudo bem?'
+      ]);
+      break;
+
+    default:
+      $response = $telegram->sendMessage([
+        'chat_id' => $chatId,
+        'text' => 'texto invalido, apenas oi está disponivel'
+      ]);
+      break;
+  }
 }
