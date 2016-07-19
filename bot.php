@@ -18,10 +18,8 @@ echo $response;
 //$updates = $telegram->getWebhookUpdates();
 $response = $telegram->getUpdates();
 
-  $updateArray = json_decode($response, TRUE);
-  $chatId = $updateArray["result"][0]["message"]["chat"]["id"];
+//$updateArray = json_decode($response, TRUE);
+//$chatId = $updateArray["result"][0]["message"]["chat"]["id"];
 
-  $response = $telegram->sendMessage([
-    'chat_id' => $chatId,
-    'text' => 'Hello World'
-  ]);
+
+print_r($response );
