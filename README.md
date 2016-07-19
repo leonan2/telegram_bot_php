@@ -1,2 +1,2 @@
-# telegrambotestudo
-Código de estudo de um bot do telegram vinculado ao heroku
+# telegram_bot_php
+Código de estudo de um bot em php do telegram vinculado ao heroku
