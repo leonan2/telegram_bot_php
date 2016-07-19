@@ -35,6 +35,10 @@ if ($update) {
         'chat_id' => $chatId,
         'text' => 'Oi, tudo bem?'
       ]);
+      $response = $telegram->sendMessage([
+        'chat_id' => $chatId,
+        'text' => 'qr tc?'
+      ]);
       break;
 
     default:
@@ -42,10 +46,7 @@ if ($update) {
         'chat_id' => $chatId,
         'text' => 'texto invalido, apenas oi está disponivel'
       ]);
-      $response = $telegram->sendMessage([
-        'chat_id' => $chatId,
-        'text' => 'qr tc?'
-      ]);
+      
       break;
   }
 }
