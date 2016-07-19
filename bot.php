@@ -15,7 +15,7 @@ $username = $response->getUsername();
 echo $response;
 */
 
-$updates = $telegram->getWebhookUpdates();
+//$updates = $telegram->getWebhookUpdates();
 //$response = $telegram->getUpdates();
 
 //$updateArray = json_decode($updates, TRUE);
