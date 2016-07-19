@@ -29,6 +29,6 @@ $hello = "hello";
 if ($update) {
   $response = $telegram->sendMessage([
     'chat_id' => '149525498',
-    'text' => $hello
+    'text' => $update['message']['text']
   ]);
 }
